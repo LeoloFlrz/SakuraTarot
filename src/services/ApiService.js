@@ -9,8 +9,7 @@ class	GetData
 		try
 		{
 			const response = await axios.get(APIUrl);
-            console.log(response);
-			return (response);
+          	return (response);
 		}
 		catch(error)
 		{

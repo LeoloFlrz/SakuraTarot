@@ -17,6 +17,6 @@
 
 <template>
 	<!-- <p>{{ cardsData }}</p> -->
-  <BtnReset/>
+  <BtnReset />
 
 </template>

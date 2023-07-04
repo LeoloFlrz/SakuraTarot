@@ -1,6 +1,6 @@
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onUpdated } from 'vue';
 
     defineProps({
         contador: {
@@ -14,95 +14,62 @@ import { ref } from 'vue';
     const etapa = ref();
     const contadorEtapas = ref(0);
 
-    // onUpdated(() => {
-    //     try {
-    //         if(contadorEtapas.value === 0) {
-    //             etapa.value = "Pasado"
-    //         } else if (contadorEtapas.value === 1) {
-    //             etapa.value = "Presente"
-    //         } else if (contadorEtapas.value === 2) {
-    //             etapa.value = "Futuro"
-    //         } else {
-    //             contadorEtapas.value = 0
-    //             etapa.value = "Default"
-    //         } 
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    
-    // })
-
-    // try {
-
-    //     let etapa = "";
-    //     const contadorEtapas = ref();
-
-    //         if(contadorEtapas.value == 0) {
-    //             etapa = "Pasado"
-    //         } else if (contadorEtapas.value == 1) {
-    //             etapa = "Presente"
-    //         } else if (contadorEtapas.value == 2) {
-    //             etapa = "Futuro"
-    //         } else {
-    //             contadorEtapas.value = 0
-    //             etapa = "Default"
-    //         } 
-
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
 
 
-    const cambiarEtapa = () => {
-        // const etapa = ref()
-        // const contadorEtapas = ref(0)
-
+    const cambiarEtapa = onUpdated(() => {
         try {
-            if (contadorEtapas.value == 0) {
+            if (contadorEtapas.value == 1) {
                 etapa.value = "pasado"
-            } if (contadorEtapas.value == 1) {
-                etapa.value = "presente"
             } if (contadorEtapas.value == 2) {
+                etapa.value = "presente"
+            } if (contadorEtapas.value == 3) {
                 etapa.value = "futuro"
-            } if(contadorEtapas.value == 3) {
-                etapa.value = "Default"
+            } if(contadorEtapas.value == 4 || contadorEtapas.value == 0) {
+                etapa.value = ""
                 contadorEtapas.value = 0
             }
         } catch (error) {
             console.log(error)
         }
         return etapa.value
-    }
-    // let contadorPrueba = computed(() =>{
-            
-    //         return contadorPrueba.value
-    //     })
-    // onMounted(() => {
-    //     try {
-    //         if(contadorEtapas.value === 0) {
-    //             etapa.value = "Pasado"
-    //         } else if (contadorEtapas.value === 1) {
-    //             etapa.value = "Presente"
-    //         } else if (contadorEtapas.value === 2) {
-    //             etapa.value = "Futuro"
-    //         } else {
+    })
+    
+    
+    
+    // try {
+    //         if (contadorEtapas.value == 1) {
+    //             etapa.value = "pasado"
+    //         } if (contadorEtapas.value == 2) {
+    //             etapa.value = "presente"
+    //         } if (contadorEtapas.value == 3) {
+    //             etapa.value = "futuro"
+    //         } if(contadorEtapas.value == 4 || contadorEtapas.value == 0) {
+    //             etapa.value = ""
     //             contadorEtapas.value = 0
-    //             etapa.value = "Default"
-    //         } 
+    //         }
     //     } catch (error) {
     //         console.log(error)
     //     }
-    // })
+    //     return etapa.value
 
 </script>
 
 <template>
-    <h2>Conoce tu {{ etapa }}</h2>
+    <div class="containerEtapa">
+        <h2>Conoce tu {{ etapa }}</h2>
     <v-btn @click="cambiarEtapa(), contadorEtapas++">
         {{ contadorEtapas }}
     </v-btn>
+    </div>
+    
 </template>
 
 <style>
+    .containerEtapa {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 </style>
 

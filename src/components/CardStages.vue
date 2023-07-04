@@ -11,7 +11,9 @@ import { ref } from 'vue';
     
 
    
-    
+    const etapa = ref();
+    const contadorEtapas = ref(0);
+
     // onUpdated(() => {
     //     try {
     //         if(contadorEtapas.value === 0) {
@@ -52,17 +54,17 @@ import { ref } from 'vue';
 
 
     const cambiarEtapa = () => {
-        const etapa = ref()
-        const contadorEtapas = ref()
+        // const etapa = ref()
+        // const contadorEtapas = ref(0)
 
         try {
             if (contadorEtapas.value == 0) {
                 etapa.value = "pasado"
-            } else if (contadorEtapas.value == 1) {
+            } if (contadorEtapas.value == 1) {
                 etapa.value = "presente"
-            } else if (contadorEtapas.value == 2) {
+            } if (contadorEtapas.value == 2) {
                 etapa.value = "futuro"
-            } else {
+            } if(contadorEtapas.value == 3) {
                 etapa.value = "Default"
                 contadorEtapas.value = 0
             }
@@ -96,7 +98,7 @@ import { ref } from 'vue';
 
 <template>
     <h2>Conoce tu {{ etapa }}</h2>
-    <v-btn @click="cambiarEtapa, contadorEtapas++">
+    <v-btn @click="cambiarEtapa(), contadorEtapas++">
         {{ contadorEtapas }}
     </v-btn>
 </template>

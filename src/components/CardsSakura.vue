@@ -1,5 +1,5 @@
 <script setup>
-    import GetData from './services/ApiService.js'
+    import GetData from '../services/ApiService.js'
 	import { onBeforeMount, ref } from 'vue';
 
 	const	apiCall = new GetData();
@@ -9,7 +9,9 @@
 	{
 		cardsData.value = await apiCall.getData();
 		console.log(cardsData.value);
-	})
+    })
+
+    
 </script>
 <template>
     <p>{{ cardsData }}</p>

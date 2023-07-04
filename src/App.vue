@@ -1,4 +1,5 @@
 <script setup>
+	import CardStages from './components/CardStages.vue';
 	import GetData from './services/ApiService.js'
 	import { onBeforeMount, ref } from 'vue';
 
@@ -15,5 +16,5 @@
 
 
 <template>
-	<p>{{ cardsData }}</p>
+	<CardStages />
 </template>

@@ -60,7 +60,7 @@ function showCard(id) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: .01rem;
+        gap: .05rem;
     }
 
     .classImg{

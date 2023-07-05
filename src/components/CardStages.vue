@@ -12,7 +12,7 @@
 <script setup>
 import { ref } from 'vue';
 import data from './CardsSakura.vue'
-import cards from './CardsSakura.vue'
+// import cards from './CardsSakura.vue'
 import cardsData from './CardsSakura.vue'
 import count from './CardsSakura.vue'
 
@@ -63,13 +63,13 @@ import count from './CardsSakura.vue'
     //     contadorEtapas.value = (contadorEtapas.value + 1) % 3;
     //     cartaSeleccionada.value = carta;
     // };
-  try {
-    if (cards[0] != '' && cards[1] != '') {
-    console.log(cards[0].value || cards[1].value);
-    }
-  } catch (error) {
-    console.log(error);
-  }
+//   try {
+//     if (cards[0] != '' && cards[1] != '') {
+//     console.log(cards[0].value || cards[1].value);
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
 
 </script>
 
@@ -79,12 +79,12 @@ import count from './CardsSakura.vue'
     <v-btn @click="cambiarEtapa(), contadorEtapas++, console.log(data.value), console.log(cardsData.value), console.log(count.value);">
         {{ contadorEtapas }}
     </v-btn>
-
-        <div class="containerPasado"></div>
-        <div class="containerPresente"></div>
-        <div class="containerFuturo"></div>
+        <div class="containerSeleccionadas">
+            <div class="containerPasado">Pasado</div>
+            <div class="containerPresente">Presente</div>
+            <div class="containerFuturo">Futuro</div>
+        </div>
     </div>
-    
 </template>
 
 <style scoped>
@@ -94,5 +94,15 @@ import count from './CardsSakura.vue'
         flex-direction: column;
         align-items: center;
     }
+
+    .containerSeleccionadas {
+        display: flex;
+        justify-content: center;
+        padding-top: auto;
+        gap: 1rem;
+    }
+
+    
+
 </style>
 

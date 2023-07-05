@@ -1,7 +1,11 @@
 <template>
   <HelloWorld />
+  <BtnReset />
+  
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import BtnReset from '@/components/BtnReset.vue';
+import HelloWorld from '@/components/HelloWorld.vue';
+
 </script>

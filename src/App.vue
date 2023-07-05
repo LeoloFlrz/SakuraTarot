@@ -1,12 +1,15 @@
 <script setup>
-	import {ref} from "vue"
-	import CardsSakura2 from './components/CardsSakura2.vue'
-	const objectFromChild = ref();
+import { ref } from "vue";
+import CardsSakura from './components/CardsSakura.vue';
+import BtnReset from './components/BtnReset.vue';
+
+const objectFromChild = ref();
 </script>
 
 <template>
 	<main>
-		<CardsSakura2 @response="(data) => objectFromChild = data"/>
+		<BtnReset />
+		<CardsSakura @response="(data) => objectFromChild = data" />
 	</main>
 </template>
 

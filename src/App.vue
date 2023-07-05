@@ -10,8 +10,8 @@
 
 <template>
 	<main>
-		<CardsSakura @response="(data) => objectFromChild = data"/>
 		<CardStages />
+		<CardsSakura @response="(data) => objectFromChild = data"/>
 	</main>
 </template>
 

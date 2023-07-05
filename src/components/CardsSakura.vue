@@ -3,13 +3,13 @@
     import { onBeforeMount, ref} from 'vue';
 
     const apiCall = new GetData();
-    const cardsData = ref(null);
-    const cards = ref([]);
-    const randoms = [];
-    const clickCard = ref('');
-    const count = ref(0);
+    const cardsData = ref();
+    let cards = ref([]);
+    let randoms = [];
+    let clickCard = ref();
+    let count = ref(0);
     const overlay = ref(false);
-    const emit = defineEmits(['response']);
+    let emit = defineEmits(['response']);
 
     onBeforeMount(async () => {
         cardsData.value = await apiCall.getData();
@@ -19,10 +19,10 @@
             const exist = randoms.filter((r) => r === random);
             if (exist.length === 0) {
                 randoms.push(random);
-                const imgCard = cardsData.value.data[random].clowCard;
-                const card = {
+                let card = {
                     id: random,
-                    img: imgCard,
+                    img: cardsData.value.data[random].clowCard,
+                    meaning: cardsData.value.data[random].meaning,
                 };
                 cards.value.push(card);
             }
@@ -31,8 +31,8 @@
 
     function showCard(id) {
         if (count.value < 3) {
-            clickCard.value = cards.value.find((card) => card.id === id).img;
-            const data = cards.value.find((card) => card.id === id).id;
+            clickCard.value = cards.value[id].img;
+            const data = cards.value[id];
             emit('response', data);
             count.value++;
             overlay.value = true;
@@ -43,8 +43,8 @@
 <template>
 		<v-container class="align-center justify-center">
 			<v-row>
-				<v-col cols="4" v-for="card in cards" :key="card.id">
-					<v-img src="/imgs/clowReverse.jpg" @click="showCard(card.id)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
+				<v-col cols="4" v-for="n in 9" :key="n">
+					<v-img src="/imgs/clowReverse.jpg" @click="showCard(n-1)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>

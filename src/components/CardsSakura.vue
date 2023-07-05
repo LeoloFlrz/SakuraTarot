@@ -31,8 +31,8 @@
 
     function showCard(id) {
         if (count.value < 3) {
-            clickCard.value = cards.value.find((card) => card.id === id).img;
-            const data = cards.value.find((card) => card.id === id).id;
+            clickCard.value = cards.value[id].img;
+            let data = cards.value[id].id;
             emit('response', data);
             count.value++;
             overlay.value = true;
@@ -43,8 +43,8 @@
 <template>
 		<v-container class="align-center justify-center">
 			<v-row>
-				<v-col cols="4" v-for="card in cards" :key="card.id">
-					<v-img src="/imgs/clowReverse.jpg" @click="showCard(card.id)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
+				<v-col cols="4" v-for="n in 9" :key="n">
+					<v-img src="/imgs/clowReverse.jpg" @click="showCard(n-1)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>

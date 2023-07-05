@@ -12,16 +12,16 @@
 	let		src = ref();
 	
 	if (props.card === 0)
-		src.value = '/clowReverse.jpeg';
+		src.value = '/imgs/clowReverse.jpg';
 	else
-		src.value = '/sakuraReverse.jpeg';
+		src.value = '/imgs/sakuraReverse.jpg';
 
 	onUpdated(() =>
 	{
 		if (props.card === 0)
-			src.value = '/clowReverse.jpeg';
+			src.value = '/imgs/clowReverse.jpg';
 		else
-			src.value = '/sakuraReverse.jpeg';
+			src.value = '/imgs/sakuraReverse.jpg';
 	})
 	
 	const	cardStyle = (counter) => 

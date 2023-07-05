@@ -1,6 +1,6 @@
 
 <script setup>
-import { ref, onUpdated } from 'vue';
+import { ref } from 'vue';
 
     defineProps({
         contador: {
@@ -9,48 +9,22 @@ import { ref, onUpdated } from 'vue';
     })
 
     
-
-   
-    const etapa = ref();
+    const etapa = ref('');
     const contadorEtapas = ref(0);
 
-
-
-    const cambiarEtapa = onUpdated(() => {
-        try {
-            if (contadorEtapas.value == 1) {
-                etapa.value = "pasado"
-            } if (contadorEtapas.value == 2) {
-                etapa.value = "presente"
-            } if (contadorEtapas.value == 3) {
-                etapa.value = "futuro"
-            } if(contadorEtapas.value == 4 || contadorEtapas.value == 0) {
-                etapa.value = ""
-                contadorEtapas.value = 0
-            }
-        } catch (error) {
-            console.log(error)
-        }
-        return etapa.value
-    })
+    const cambiarEtapa = () => {
+    if (contadorEtapas.value === 0) {
+      etapa.value = 'pasado';
+    } else if (contadorEtapas.value === 1) {
+      etapa.value = 'presente';
+    } else if (contadorEtapas.value === 2) {
+      etapa.value = 'futuro';
+    } else {
+      etapa.value = 'pasado';
+      contadorEtapas.value = 0;
+    }
+  };
     
-    
-    
-    // try {
-    //         if (contadorEtapas.value == 1) {
-    //             etapa.value = "pasado"
-    //         } if (contadorEtapas.value == 2) {
-    //             etapa.value = "presente"
-    //         } if (contadorEtapas.value == 3) {
-    //             etapa.value = "futuro"
-    //         } if(contadorEtapas.value == 4 || contadorEtapas.value == 0) {
-    //             etapa.value = ""
-    //             contadorEtapas.value = 0
-    //         }
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    //     return etapa.value
 
 </script>
 

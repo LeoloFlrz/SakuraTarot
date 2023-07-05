@@ -51,7 +51,6 @@ function showCard(id) {
         emit('response', data);
         count.value++;
     };
-};
     
 </script>
 

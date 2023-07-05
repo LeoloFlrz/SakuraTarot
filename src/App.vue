@@ -1,22 +1,15 @@
 <script setup>
-	import GetData from './services/ApiService.js'
-	import { onBeforeMount, ref } from 'vue';
-  import BtnReset from './components/BtnReset.vue';
+	import {ref} from "vue"
+	import CardsSakura from './components/CardsSakura.vue'  import BtnReset from './components/BtnReset.vue';
   
-	const	apiCall = new GetData();
-	const	cardsData = ref();
-	
-	onBeforeMount(async() => 
-	{
-		cardsData.value = await apiCall.getData();
-		console.log(cardsData.value);
-	})
-
+	const objectFromChild = ref();
 </script>
 
-
 <template>
-	<BtnReset />
-
-
+<main>
+  <BtnReset />
+		<CardsSakura @response="(data) => objectFromChild = data"/>
+	</main>
 </template>
+
+<style></style>

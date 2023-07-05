@@ -36,7 +36,7 @@ function showCard(id) {
     console.log(id);
     if (count.value < 3) {
         clickCard.value = cards.value[id].img;
-        let data = cards.value[id].id
+        let data = cards.value[id];
         emit('response', data);
         count.value++;
     };

@@ -28,8 +28,8 @@
                 card.id = random;
                 card.img = imgCard;
                 cards.value.push(card);
-            };
-        };
+            }
+        }
     })
 
 function showCard(id) {
@@ -39,8 +39,8 @@ function showCard(id) {
         let data = cards.value[id];
         emit('response', data);
         count.value++;
-    };
-};
+    }
+}
     
 </script>
 <template>

@@ -45,6 +45,11 @@ import { ref } from 'vue';
     <v-btn @click="cambiarEtapa(), contadorEtapas++">
         {{ contadorEtapas }}
     </v-btn>
+
+        <div class="containerPasado"></div>
+        <div class="containerPresente"></div>
+        <div class="containerFuturo"></div>
+
     </div>
     
 </template>

@@ -44,7 +44,7 @@
 		<v-container class="align-center justify-center">
 			<v-row>
 				<v-col cols="4" v-for="card in cards" :key="card.id">
-					<v-img :src="card.img" @click="showCard(card.id)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
+					<v-img src="/imgs/clowReverse.jpg" @click="showCard(card.id)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>

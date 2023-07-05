@@ -30,7 +30,6 @@ onBeforeMount(async () => {
 });
 
 function showCard(id) {
-<<<<<<< HEAD
 	if (count.value < 3) {
 		clickCard.value = cards.value.find((card) => card.id === id).img;
 		const data = cards.value.find((card) => card.id === id).id;
@@ -38,7 +37,6 @@ function showCard(id) {
 		count.value++;
 	}
 }
-=======
     console.log(id);
     if (count.value < 3) {
         clickCard.value = cards.value[id].img;
@@ -48,7 +46,6 @@ function showCard(id) {
     };
 };
     
->>>>>>> bf33f77155e7c7326bba6286fc8bae2cd19d96fc
 </script>
 
 
@@ -70,12 +67,9 @@ function showCard(id) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-<<<<<<< HEAD
         gap: .01rem;
 				
-=======
         gap: .05rem;
->>>>>>> bf33f77155e7c7326bba6286fc8bae2cd19d96fc
     }
 
     .classImg{

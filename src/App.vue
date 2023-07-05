@@ -10,7 +10,8 @@
 <main>
 	<BtnReset />
 	<CardsSakura @response="(data) => objectFromChild = data"/>
-	</main>
+
+</main>
 </template>
 
 <style></style>

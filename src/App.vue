@@ -1,19 +1,13 @@
 <script setup>
-	import GetData from './services/ApiService.js'
-	import { onBeforeMount, ref } from 'vue';
-
-	const	apiCall = new GetData();
-	const	cardsData = ref();
-	
-	onBeforeMount(async() => 
-	{
-		cardsData.value = await apiCall.getData();
-		console.log(cardsData.value);
-	})
-
+	import {ref} from "vue"
+	import CardsSakura from './components/CardsSakura.vue'
+	const objectFromChild = ref();
 </script>
 
-
 <template>
-	<p>{{ cardsData }}</p>
+	<main>
+		<CardsSakura @response="(data) => objectFromChild = data"/>
+	</main>
 </template>
+
+<style></style>

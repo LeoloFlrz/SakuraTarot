@@ -7,11 +7,12 @@
 
 </script>
 
+
 <template>
 	<main>
 		<CardsSakura @response="(data) => objectFromChild = data"/>
+		<CardStages />
 	</main>
-	<CardStages />
 </template>
 
 <style></style>

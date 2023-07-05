@@ -1,4 +1,4 @@
-<script setup>
+<!--<script setup>
     
     import GetData from '../services/ApiService.js'
 	import { onBeforeMount, ref } from 'vue';
@@ -77,4 +77,4 @@ function showCard(id) {
     .cardSelected{
         width: 100%;
     }
-</style>
+</style> -->

@@ -17,9 +17,9 @@ import count from './CardsSakura.vue'
     const etapa = ref('');
     const contadorEtapas = ref(0);
     const cartaSeleccionada = ref('');
-    const pasadoFlag = ref(false)
-    const presenteFlag = ref(false)
-    const futuroFlag = ref(false)
+    // const pasadoFlag = ref(false)
+    // const presenteFlag = ref(false)
+    // const futuroFlag = ref(false)
 
 //     const cambiarEtapa = () => {
 //     if (contadorEtapas.value === 0) {

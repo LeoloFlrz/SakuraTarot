@@ -2,9 +2,9 @@
     <div class="logo">
         <v-img height="80" src="/imgs/Site-logo_sakura.webp" />
     </div>
-  <div>
-    <v-btn class="overcard" variant="plain" @click="selectCards">Nueva tirada</v-btn>
-  </div>
+    <div>
+        <v-btn class="overcard" variant="plain" @click="selectCards">Nueva tirada</v-btn>
+    </div>
 </template>
 
 <script>

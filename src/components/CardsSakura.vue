@@ -2,7 +2,6 @@
     
     import GetData from '../services/ApiService.js'
 	import { onBeforeMount, ref } from 'vue';
-
 	const apiCall = new GetData();
 	const cardsData = ref();
 	let cards = ref([]);
@@ -24,9 +23,11 @@
                 let card = {
                     id: "",
                     img: "",
-                }
+                    meaning: ""
+                };
                 card.id = random;
                 card.img = imgCard;
+                card.meaning = cardsData.value.data[random].meaning;
                 cards.value.push(card);
             };
         };
@@ -34,7 +35,10 @@
 
 function showCard(id) {
     console.log(id);
-    if (count.value < 3) {
+    let existCard = cards.value.filter((r) => r == id);
+    if (existCard.length > 0) {
+        count.value = count.value - 1;
+    } else if ((count.value < 3) && (existCard.length == 0)) {
         clickCard.value = cards.value[id].img;
         let data = cards.value[id];
         emit('response', data);

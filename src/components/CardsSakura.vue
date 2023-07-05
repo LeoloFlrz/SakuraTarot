@@ -1,6 +1,6 @@
 <script setup>
     import GetData from '../services/ApiService.js';
-    import { onBeforeMount, ref, defineEmits } from 'vue';
+    import { onBeforeMount, ref} from 'vue';
 
     const apiCall = new GetData();
     const cardsData = ref(null);

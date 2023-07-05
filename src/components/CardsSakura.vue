@@ -1,44 +1,54 @@
 <script setup>
     import GetData from '../services/ApiService.js';
-    import { onBeforeMount, ref} from 'vue';
+    import { onBeforeMount, ref, watch} from 'vue';
 
     const apiCall = new GetData();
     const cardsData = ref();
     let cards = ref([]);
+    let threeCards = [];
     let randoms = [];
     let clickCard = ref();
     let count = ref(0);
     const overlay = ref(false);
+    watch(overlay, val => {
+        val && setTimeout(() => {
+            overlay.value = false
+        }, 3000)
+    });
     let emit = defineEmits(['response']);
 
     onBeforeMount(async () => {
         cardsData.value = await apiCall.getData();
-
         while (randoms.length < 9) {
             const random = Math.floor(Math.random() * 55);
             const exist = randoms.filter((r) => r === random);
+            let imgCard = cardsData.value.data[random].clowCard;
+            let meaningCard = cardsData.value.data[random].meaning;
             if (exist.length === 0) {
                 randoms.push(random);
                 let card = {
                     id: random,
-                    img: cardsData.value.data[random].clowCard,
-                    meaning: cardsData.value.data[random].meaning,
+                    img: imgCard,
+                    meaning: meaningCard,
                 };
                 cards.value.push(card);
-            }
-        }
+            };
+        };
     });
 
     function showCard(id) {
-        if (count.value < 3) {
+        console.log(id);
+        const exist = threeCards.filter((r) => r === id);
+        if (count.value < 3 && exist.length == 0) {
             clickCard.value = cards.value[id].img;
             const data = cards.value[id];
             emit('response', data);
             count.value++;
             overlay.value = true;
-        }
-    }
-    </script>
+            threeCards.push(id);
+        };
+    };
+</script>
 
 <template>
 		<v-container class="align-center justify-center">

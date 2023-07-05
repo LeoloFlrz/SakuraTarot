@@ -65,7 +65,7 @@ import count from './CardsSakura.vue'
     // };
   try {
     if (cards[0] != '' && cards[1] != '') {
-    console.log(cards[0]);
+    console.log(cards[0].value || cards[1].value);
     }
   } catch (error) {
     console.log(error);

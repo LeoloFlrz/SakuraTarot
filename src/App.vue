@@ -8,11 +8,11 @@ const objectFromChild = ref();
 </script>
 
 <template>
+	<CardsDeck></CardsDeck>
 	<main>
 		<BtnReset />
 		<CardsSakura @response="(data) => objectFromChild = data" />
 	</main>
-		<CardsDeck></CardsDeck>
 </template>
 
 <style></style>

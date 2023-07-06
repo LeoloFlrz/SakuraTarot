@@ -13,7 +13,7 @@
     watch(overlay, val => {
         val && setTimeout(() => {
             overlay.value = false
-        }, 3000)
+        }, 2000)
     });
     let emit = defineEmits(['response']);
 

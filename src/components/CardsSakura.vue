@@ -54,7 +54,7 @@
 		<v-container class="align-center justify-center containerCard">
 			<v-row>
 				<v-col cols="4" v-for="n in 9" :key="n">
-					<v-img src="/imgs/sakuraReverse.jpeg" @click="showCard(n-1)" elevation="12" class="mx-auto rounded-lg"></v-img>
+					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" elevation="12" class="mx-auto rounded-lg"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>

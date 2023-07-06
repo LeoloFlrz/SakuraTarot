@@ -6,14 +6,18 @@ import BtnReset from './components/BtnReset.vue';
 import CardStages from './components/CardStages.vue'
 
 const objectFromChild = ref();
+const BooleanShuffle = ref();
+
 </script>
 
 <template>
-	<CardsDeck />
+	
 	<main>
-		<BtnReset />
-		<CardsSakura @response="(data) => objectFromChild = data" />
-			<CardStages />
+		<BtnReset @response="(reparto) => BooleanShuffle = reparto"/>
+		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
+		<CardsDeck />
+
+		
 	</main>
 </template>
 

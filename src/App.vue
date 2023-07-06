@@ -4,6 +4,7 @@ import CardsSakura from './components/CardsSakura.vue';
 import BtnReset from './components/BtnReset.vue';
 import CardsDeck from './components/CardsDeck.vue';
 import CardStages from './components/CardStages.vue'
+import FooterSakura from "./components/FooterSakura.vue";
 
 const objectFromChild = ref();
 const BooleanShuffle = ref();
@@ -17,6 +18,7 @@ const BooleanShuffle = ref();
 		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
 		<CardStages />
 		<CardsDeck :card="1"/>
+		<FooterSakura />
 
 		
 	</main>

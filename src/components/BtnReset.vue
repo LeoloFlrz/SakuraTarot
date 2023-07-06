@@ -10,9 +10,12 @@ function tirada(){
 </script>
 
 <template>
+   
+    
     <div class="logo">
         <v-img height="80" src="/imgs/Site-logo_sakura.webp" />
     </div>
+    
     <div class="g-deck">
         <v-btn class="overcard" variant="plain" @click=tirada()>Nueva tirada</v-btn>
         <!-- <p>{{reparto}}</p> -->
@@ -24,9 +27,9 @@ function tirada(){
     display: flex;
     align-items: center;
 }
-.g-deck{
+.overcard{
     margin-top: 2rem;
-    /* z-index: 2; */
+    z-index: 55; 
     }
 
 .v-btn__content{

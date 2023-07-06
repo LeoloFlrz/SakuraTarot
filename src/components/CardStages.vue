@@ -14,14 +14,31 @@ const props = defineProps({
 });
 
 const card1 = ref();
+const card1Img = ref()
 const card2 = ref();
 const card3 = ref();
 const contador = ref(0);
 const arraySeleccionadas = ref([])
 
 onUpdated(() => {
-    arraySeleccionadas[contador.value] = props.data
+    arraySeleccionadas.value[contador.value] = props.data
+    
+    // arraySeleccionadas.value[0] = "Hola"
     contador.value++
+
+    if (arraySeleccionadas.value.length === 1) {
+      card1.value = arraySeleccionadas.value[0]
+      console.log(card1.value);
+    } else if (arraySeleccionadas.value.legnth === 2) {
+      card2.value = arraySeleccionadas.value[1]
+      console.log(card2.value);
+    } else if (arraySeleccionadas.value.length === 3) {
+      card3.value = arraySeleccionadas.value[2]
+      console.log(card3.value);
+    }
+    
+
+    
 })
 
 </script>
@@ -29,9 +46,6 @@ onUpdated(() => {
 <template>
   <div class="containerEtapa">
     <h2>Conoce tu destino</h2>
-    
-
-    <p>{{ data }}</p>
     <div class="containerSeleccionadas">
       <div class="containerPasado">Pasado {{ card1 }}</div>
       <div class="containerPresente">Presente {{ card2 }}</div>

@@ -11,7 +11,7 @@ function tirada(){
 
 <template>
     <div class="logo">
-        <v-img height="80" src="/imgs/Site-logo_sakura.webp" />
+        <v-img height="13vmin" src="/imgs/Site-logo_sakura.webp" />
     </div>
     <div class="g-deck">
         <v-btn class="overcard" variant="plain" @click=tirada()>Nueva tirada</v-btn>

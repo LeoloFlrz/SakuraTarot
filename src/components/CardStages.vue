@@ -52,17 +52,17 @@ onBeforeUpdate(() => {
     <div class="containerSeleccionadas">
       <div class="containerPasado">
         <p>Pasado</p> 
-        <img :src="card1Src">
+        <img :v-if="card1Src" :src="card1Src">
         <p>{{ card1Meaning }}</p>
       </div>
       <div class="containerPresente">
         <p>Presente</p> 
-        <img :src="card2Src">
+        <img :v-if="card2Src" :src="card2Src">
         <p>{{ card2Meaning }}</p>
       </div>
       <div class="containerFuturo">
         <p>Futuro</p>
-        <img :src="card3Src">  
+        <img :v-if="card3Src" :src="card3Src">  
         <p>{{ card3Meaning }}</p>
       </div>
     </div>

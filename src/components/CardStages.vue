@@ -5,65 +5,42 @@ opcion de seleccionar ninguna mas mostrar las 3 cartas asignadas a su etapa
 mostrar significado de cada carta */
 
 <script setup>
-import { onBeforeUpdate } from "vue";
+import { onBeforeUpdate, ref } from "vue";
 
 const props = defineProps({
   data: {
     type: Object
   }
+  
 });
 
-let card1, card1Img, card1Meaning;
-let card2, card2Img, card2Meaning;
-let card3, card3Img, card3Meaning;
-// const contador = ref(0);
+let card1, card1Meaning;
+let card2, card2Meaning;
+let card3, card3Meaning;
 const arraySeleccionadas = []
+const card1Src = ref()
+const card2Src = ref()
+const card3Src = ref()
 
-// onUpdated(() => {
-//     arraySeleccionadas.push(props.data);
-    
-//     // arraySeleccionadas.value[0] = "Hola"
-
-//     if (arraySeleccionadas.length === 1) {
-//       card1 = arraySeleccionadas[0]
-//       console.log(card1);
-//     }
-//      if (arraySeleccionadas.length === 2 ) {
-//       card2 = arraySeleccionadas[1]
-//       console.log(card2);
-//     } 
-//      if (arraySeleccionadas.length === 3 ) {
-//       card3 = arraySeleccionadas[2]
-//       console.log(card3);
-//     }
-//     console.log(arraySeleccionadas);
-//     return card1, card2, card3
-// })
 onBeforeUpdate(() => {
   arraySeleccionadas.push(props.data);
     
-    // arraySeleccionadas.value[0] = "Hola"
-
     if (arraySeleccionadas.length === 1) {
       card1 = arraySeleccionadas[0]
-      card1Img = arraySeleccionadas[0].sakuraCard
+      card1Src.value = card1.img
       card1Meaning = arraySeleccionadas[0].meaning
-      console.log(card1);
     }
      if (arraySeleccionadas.length === 2 ) {
       card2 = arraySeleccionadas[1]
-      card2Img = arraySeleccionadas[1].sakuraCard
+      card2Src.value = card2.img
       card2Meaning = arraySeleccionadas[1].meaning
-      console.log(card2);
     } 
      if (arraySeleccionadas.length === 3 ) {
       card3 = arraySeleccionadas[2]
-      card3Img = arraySeleccionadas[2].sakuraCard
+      card3Src.value = card3.img
       card3Meaning = arraySeleccionadas[2].meaning
-      console.log(card3);
     }
-    console.log(arraySeleccionadas);
-    return { card1, card1Img, card1Meaning, card2, card2Img, card2Meaning, card3, card3Img, card3Meaning}
+    return  card1, card1Src, card1Meaning, card2, card2Src, card2Meaning, card3, card3Src, card3Meaning
 })
 
 
@@ -74,18 +51,18 @@ onBeforeUpdate(() => {
     <h2>Conoce tu destino</h2>
     <div class="containerSeleccionadas">
       <div class="containerPasado">
-        <p>Pasado {{ card1 }}</p> 
-        <img  >{{ card1Img }}<img/>
+        <p>Pasado</p> 
+        <img :src="card1Src">
         <p>{{ card1Meaning }}</p>
       </div>
       <div class="containerPresente">
-        <p>Presente {{ card2 }}</p> 
-        <img>{{ card2Img }}<img/>
+        <p>Presente</p> 
+        <img :src="card2Src">
         <p>{{ card2Meaning }}</p>
       </div>
       <div class="containerFuturo">
-        <p>Futuro {{ card3 }}</p>
-        <img> {{ card3Img }} <img/>
+        <p>Futuro</p>
+        <img :src="card3Src">  
         <p>{{ card3Meaning }}</p>
       </div>
     </div>
@@ -105,5 +82,9 @@ onBeforeUpdate(() => {
   justify-content: center;
   padding-top: auto;
   gap: 1rem;
+}
+
+p {
+  text-align: center;
 }
 </style>

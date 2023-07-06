@@ -5,13 +5,18 @@ import CardsDeck from './components/CardsDeck.vue';
 import BtnReset from './components/BtnReset.vue';
 
 const objectFromChild = ref();
+const BooleanShuffle = ref();
+
 </script>
 
 <template>
-	<CardsDeck />
+	
 	<main>
-		<BtnReset />
-		<CardsSakura @response="(data) => objectFromChild = data" />
+		<BtnReset @response="(reparto) => BooleanShuffle = reparto"/>
+		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
+		<CardsDeck />
+
+		
 	</main>
 </template>
 

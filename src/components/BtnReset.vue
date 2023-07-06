@@ -17,7 +17,7 @@ function tirada(){
     </div>
     
     <div class="g-deck">
-        <v-btn class="overcard" variant="plain" @click=tirada()>Nueva tirada</v-btn>
+        <v-btn class="overcard" variant="plain" @click=tirada()>Nueva <br> tirada</v-btn>
         <!-- <p>{{reparto}}</p> -->
     </div>
 </template>
@@ -25,16 +25,24 @@ function tirada(){
 <style>
 .logo{
     display: flex;
-    align-items: center;
+    justify-content:center ;
+    margin-top: 2rem;
 }
 .overcard{
     margin-top: 2rem;
     z-index: 55; 
+    background-color: rgba(255, 0, 0, 0.5);
     }
 
 .v-btn__content{
     color:white;
     font-weight: bolder;
+}
+.g-deck{
+    position: absolute;
+    left: 3rem;
+	top: 5rem;
+    
 }
 
 

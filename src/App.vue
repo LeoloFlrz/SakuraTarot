@@ -16,14 +16,15 @@ const BooleanShuffle = ref();
 		<BtnReset @response="(reparto) => BooleanShuffle = reparto"/>
 		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
 		<CardStages />
-		<CardsDeck />
+		<CardsDeck :card="1"/>
 
 		
 	</main>
 </template>
 
 <style>
-main{	background-image:url('imgs/bg_light.jpeg');
+body{	background-image:url('imgs/bg_light.jpeg');
 	background-size: cover;
+	min-height: 100vh;
 } 
 </style>

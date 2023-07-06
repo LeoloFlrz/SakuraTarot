@@ -22,7 +22,7 @@
         while (randoms.length < 9) {
             const random = Math.floor(Math.random() * 55);
             const exist = randoms.filter((r) => r === random);
-            let imgCard = cardsData.value.data[random].clowCard;
+            let imgCard = cardsData.value.data[random].sakuraCard;
             let meaningCard = cardsData.value.data[random].meaning;
             if (exist.length === 0) {
                 randoms.push(random);
@@ -54,7 +54,7 @@
 		<v-container class="align-center justify-center containerCard">
 			<v-row>
 				<v-col cols="4" v-for="n in 9" :key="n">
-					<v-img src="/imgs/clowReverse.jpg" @click="showCard(n-1)" elevation="12" class="mx-auto rounded-lg"></v-img>
+					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" elevation="12" class="mx-auto rounded-lg"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>

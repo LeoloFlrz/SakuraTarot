@@ -8,7 +8,7 @@ mostrar significado de cada carta */
 import { ref } from "vue";
 import data from "./CardsSakura.vue";
 // import cards from './CardsSakura.vue'
-import cards from './CardsSakura.vue'
+// import cards from './CardsSakura.vue'
 import count from './CardsSakura.vue'
 
 defineProps({
@@ -72,12 +72,11 @@ const cambiarEtapa = () => {
       @click="
         cambiarEtapa(),
           contadorEtapas++,
-          console.log(data.value),
-          console.log(cardsData.value),
-          console.log(count.value)
+          console.log(data),
+          console.log(cardsData),
+          console.log(count)
       "
     >
-      {{ contadorEtapas }}
     </v-btn>
     <div class="containerSeleccionadas">
       <div class="containerPasado">Pasado</div>

@@ -16,7 +16,7 @@ const BooleanShuffle = ref();
 		<BtnReset @response="(reparto) => BooleanShuffle = reparto"/>
 		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
 		<CardsDeck />
-
+		<CardStages />
 		
 	</main>
 </template>

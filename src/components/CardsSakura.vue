@@ -51,14 +51,14 @@
 </script>
 
 <template>
-		<v-container class="align-center justify-center">
+		<v-container class="align-center justify-center containerCard">
 			<v-row>
 				<v-col cols="4" v-for="n in 9" :key="n">
-					<v-img src="/imgs/clowReverse.jpg" @click="showCard(n-1)" elevation="12" height="33vmin" class="mx-auto rounded-lg"></v-img>
+					<v-img src="/imgs/clowReverse.jpg" @click="showCard(n-1)" elevation="12" class="mx-auto rounded-lg"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>
-		<v-overlay v-model="overlay" class="align-center justify-center" scrim="#795176" @click:outside="overlay = false">
+		<v-overlay v-model="overlay" class="align-center justify-center" scrim="#795176" @click:outside="overlay = false" >
 			<v-img :src="clickCard" class="rounded-lg"></v-img>
 		</v-overlay>
 </template>
@@ -66,4 +66,7 @@
 
 <style scoped>
 /*scrim="#f9a245"*/
+.containerCard{
+    max-width: 60%;
+}
 </style>

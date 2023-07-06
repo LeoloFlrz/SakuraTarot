@@ -5,83 +5,37 @@ opcion de seleccionar ninguna mas mostrar las 3 cartas asignadas a su etapa
 mostrar significado de cada carta */
 
 <script setup>
-import { ref } from "vue";
-import data from "./CardsSakura.vue";
-// import cards from './CardsSakura.vue'
-// import cards from './CardsSakura.vue'
-import count from './CardsSakura.vue'
+import { ref, onUpdated } from "vue";
 
-defineProps({
-  contador: {
-    type: String,
-  },
+const props = defineProps({
+  data: {
+    type: Object
+  }
 });
 
-const etapa = ref("");
-const contadorEtapas = ref(0);
-// const cartaSeleccionada = ref('');
-const pasadoFlag = ref(false);
-const presenteFlag = ref(false);
-const futuroFlag = ref(false);
+const card1 = ref();
+const card2 = ref();
+const card3 = ref();
+const contador = ref(0);
+const arraySeleccionadas = ref([])
 
-const cambiarEtapa = () => {
-  if (contadorEtapas.value === 0) {
-    etapa.value = "pasado";
-    pasadoFlag.value = true;
-  } else if (contadorEtapas.value === 1) {
-    etapa.value = "presente";
-    pasadoFlag.value = false;
-    presenteFlag.value = true;
-  } else if (contadorEtapas.value === 2) {
-    etapa.value = "futuro";
-    presenteFlag.value = false;
-    futuroFlag.value = true;
-  } else {
-    etapa.value = "pasado";
-    contadorEtapas.value = 0;
-    presenteFlag.value = false;
-    futuroFlag.value = false;
-    pasadoFlag.value = true;
-  }
-};
+onUpdated(() => {
+    arraySeleccionadas[contador.value] = props.data
+    contador.value++
+})
 
-// const cambiarEtapa = (carta) => {
-//     if (contadorEtapas.value === 0) {
-//     etapa.value = 'pasado';
-//     } else if (contadorEtapas.value === 1) {
-//     etapa.value = 'presente';
-//     } else if (contadorEtapas.value === 2) {
-//     etapa.value = 'futuro';
-//     }
-//     contadorEtapas.value = (contadorEtapas.value + 1) % 3;
-//     cartaSeleccionada.value = carta;
-// };
-//   try {
-//     if (cards[0] != '' && cards[1] != '') {
-//     console.log(cards[0].value || cards[1].value);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
 </script>
 
 <template>
   <div class="containerEtapa">
     <h2>Conoce tu destino</h2>
-    <v-btn
-      @click="
-        cambiarEtapa(),
-          contadorEtapas++,
-          console.log(data),
-          console.log(cardsData),
-          console.log(count)
-      "
-    >
-    </v-btn>
+    
+
+    <p>{{ data }}</p>
     <div class="containerSeleccionadas">
-      <div class="containerPasado">Pasado</div>
-      <div class="containerPresente">Presente</div>
-      <div class="containerFuturo">Futuro</div>
+      <div class="containerPasado">Pasado {{ card1 }}</div>
+      <div class="containerPresente">Presente {{ card2 }}</div>
+      <div class="containerFuturo">Futuro {{ card3 }}</div>
     </div>
   </div>
 </template>

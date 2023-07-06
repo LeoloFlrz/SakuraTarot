@@ -18,3 +18,21 @@ function tirada(){
         <!-- <p>{{reparto}}</p> -->
     </div>
 </template>
+
+<style>
+.logo{
+    display: flex;
+    align-items: center;
+}
+.g-deck{
+    margin-top: 2rem;
+    /* z-index: 2; */
+    }
+
+.v-btn__content{
+    color:white;
+    font-weight: bolder;
+}
+
+
+</style>

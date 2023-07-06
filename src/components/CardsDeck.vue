@@ -43,6 +43,8 @@
 	position: absolute;
 	width: 10%;
 	left: 3rem;
-    top: 2rem;
-}
+	top: 2rem;
+	}
+
+/* .deck{z-index: 1;} */
 </style>

@@ -13,7 +13,7 @@
 import { ref } from 'vue';
 import data from './CardsSakura.vue'
 // import cards from './CardsSakura.vue'
-import cardsData from './CardsSakura.vue'
+import cards from './CardsSakura.vue'
 import count from './CardsSakura.vue'
 
 
@@ -76,7 +76,7 @@ import count from './CardsSakura.vue'
 <template>
     <div class="containerEtapa">
         <h2>Conoce tu {{ etapa }}</h2>
-    <v-btn @click="cambiarEtapa(), contadorEtapas++, console.log(data.value), console.log(cardsData.value), console.log(count.value);">
+    <v-btn @click="cambiarEtapa(), contadorEtapas++, console.log(data.value), console.log(count.value);">
         {{ contadorEtapas }}
     </v-btn>
         <div class="containerSeleccionadas">

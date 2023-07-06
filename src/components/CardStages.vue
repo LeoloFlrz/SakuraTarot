@@ -5,7 +5,7 @@ opcion de seleccionar ninguna mas mostrar las 3 cartas asignadas a su etapa
 mostrar significado de cada carta */
 
 <script setup>
-import { ref, onUpdated } from "vue";
+import { onBeforeUpdate } from "vue";
 
 const props = defineProps({
   data: {
@@ -13,33 +13,53 @@ const props = defineProps({
   }
 });
 
-const card1 = ref();
-const card1Img = ref()
-const card2 = ref();
-const card3 = ref();
-const contador = ref(0);
-const arraySeleccionadas = ref([])
+let card1;
+let card2;
+let card3;
+// const contador = ref(0);
+const arraySeleccionadas = []
 
-onUpdated(() => {
-    arraySeleccionadas.value[contador.value] = props.data
+// onUpdated(() => {
+//     arraySeleccionadas.push(props.data);
+    
+//     // arraySeleccionadas.value[0] = "Hola"
+
+//     if (arraySeleccionadas.length === 1) {
+//       card1 = arraySeleccionadas[0]
+//       console.log(card1);
+//     }
+//      if (arraySeleccionadas.length === 2 ) {
+//       card2 = arraySeleccionadas[1]
+//       console.log(card2);
+//     } 
+//      if (arraySeleccionadas.length === 3 ) {
+//       card3 = arraySeleccionadas[2]
+//       console.log(card3);
+//     }
+//     console.log(arraySeleccionadas);
+//     return card1, card2, card3
+// })
+onBeforeUpdate(() => {
+  arraySeleccionadas.push(props.data);
     
     // arraySeleccionadas.value[0] = "Hola"
-    contador.value++
 
-    if (arraySeleccionadas.value.length === 1) {
-      card1.value = arraySeleccionadas.value[0]
-      console.log(card1.value);
-    } else if (arraySeleccionadas.value.legnth === 2) {
-      card2.value = arraySeleccionadas.value[1]
-      console.log(card2.value);
-    } else if (arraySeleccionadas.value.length === 3) {
-      card3.value = arraySeleccionadas.value[2]
-      console.log(card3.value);
+    if (arraySeleccionadas.length === 1) {
+      card1 = arraySeleccionadas[0]
+      console.log(card1);
     }
-    
-
-    
+     if (arraySeleccionadas.length === 2 ) {
+      card2 = arraySeleccionadas[1]
+      console.log(card2);
+    } 
+     if (arraySeleccionadas.length === 3 ) {
+      card3 = arraySeleccionadas[2]
+      console.log(card3);
+    }
+    console.log(arraySeleccionadas);
+    return card1, card2, card3
 })
+
 
 </script>
 

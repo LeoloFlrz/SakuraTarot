@@ -51,10 +51,10 @@
 </script>
 
 <template>
-		<v-container class="align-center justify-center px-8 containerCard">
+		<v-container class="align-center justify-center containerCard">
 			<v-row>
 				<v-col cols="4" v-for="n in 9" :key="n">
-					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" elevation="12" class="mx-auto rounded-lg"></v-img>
+					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" elevation="12" class="imageCard mx-auto rounded-lg pa-2"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>
@@ -67,13 +67,18 @@
 <style scoped>
 /*scrim="#f9a245"*/
 .containerCard{
-    max-width: 22vmax;
+    max-width: 18vmax;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
 .containerCard {
-    max-width: 20vmax;
+    max-width: 240px;
+    margin: 20px auto;
+    padding: 0;
   }
+.imageCard {
+    padding: 0;
+}
 }
 
 </style>

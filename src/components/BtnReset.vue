@@ -43,10 +43,10 @@ function tirada(){
     margin-top: 2rem;
 }
 .overcard{
+    cursor: url(../../public/imgs/magicWand_Sakura.png), auto;
     margin-top: 2rem;
     z-index: 55; 
-    background-color: rgba(255, 0, 0, 0.5);
-    }
+};
 
 .v-btn__content{
     color:white;
@@ -56,9 +56,8 @@ function tirada(){
     position: absolute;
     left: 3rem;
 	top: 5rem; 
-    font-family:'Gochi Hand', cursive; 
+    font-family:'Gochi Hand', cursive;
+   
     /* 'Shrikhand', cursive;  */
 }
-
-
 </style>

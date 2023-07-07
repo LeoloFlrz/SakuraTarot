@@ -66,13 +66,15 @@
 
 <style scoped>
 .containerCard{
-    width: 65vmax;
-}
+    max-width: 18vmax;
+    cursor: url(../public/imgs/magicWand_Sakura.png), auto;
+};
 
 @media screen and (max-width: 960px) {
 .containerCard {
     width: 33vmax;
     padding: 0;
+    cursor: url(../../public/imgs/magicWand_Sakura.png), auto;
   }
 }
 

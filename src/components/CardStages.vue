@@ -78,6 +78,7 @@ onBeforeUpdate(() => {
   justify-content: center;
   /* flex-direction: column; */
   /* align-items: center; */
+  margin-bottom: 120px;
 }
 
 .containerSeleccionadas {
@@ -100,12 +101,15 @@ onBeforeUpdate(() => {
 }
 p{
   font-family: 'Gochi Hand', cursive;
+  /* margin-bottom: 500px; */
 }
 
 
 .containerPasado p, .containerPresente p, .containerFuturo p {
-  background: #bb5c5c;
-  color: #fff;
+  background-image: url(imgs/bg_white.jpeg);
+  background-size: repeat;
+  color: #F66AA3;
+  font-weight: bolder;
   border-radius: 20px;
   padding: 5px 5px;
   margin: 5px;
@@ -113,10 +117,11 @@ p{
 }
 
 .containerPasado h2, .containerPresente h2, .containerFuturo h2 {
-  background: #bb5c5c;
-  color: #fff;
+  background-image: url(imgs/bg_sakuras.png);
+  background-size: cover;
+  color: #F66AA3;
   border-radius: 20px;
-  padding: 5px 5px;
+  padding: 10px 25px;
   margin: 5px;
 }
 

@@ -19,7 +19,6 @@ const BooleanShuffle = ref();
 		<CardsDeck :card="1"/>
 		<CardStages :data = "objectFromChild"/>
 		<FooterSakura />
-
 		
 	</main>
 </template>

@@ -48,7 +48,6 @@ onBeforeUpdate(() => {
 
 <template>
   <div class="containerEtapa">
-    <h2>Conoce tu destino</h2>
     <div class="containerSeleccionadas">
       <div class="containerPasado">
         <p>Pasado</p> 

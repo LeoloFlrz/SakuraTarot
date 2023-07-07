@@ -72,7 +72,7 @@
 
 @media screen and (max-width: 480px) {
 .containerCard {
-    max-width: 240px;
+    max-width: 220px;
     margin: 20px auto;
     padding: 0;
   }

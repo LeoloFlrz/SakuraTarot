@@ -111,8 +111,8 @@ onBeforeUpdate(() => {
   background-size: cover;
   color: #F66AA3;
   border-radius: 20px;
-  padding: 5px 5px;
-  margin: 10px;
+  padding: 1vh 2vw;
+  margin: 2vh;
   width: 90%;
 }
 
@@ -122,8 +122,8 @@ onBeforeUpdate(() => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   color: #F66AA3;
   border-radius: 20px;
-  padding: 8px 20px;
-  margin: 10px;
+  padding: 1vh 2vw;
+  margin: 2vh;
 }
 
 

@@ -46,6 +46,7 @@ function tirada(){
     margin-top: 2rem;
     z-index: 55; 
     background-color: rgba(255, 0, 0, 0.5);
+    cursor: url('imgs/magicWand_Sakura.png'),auto;
     }
 
 .v-btn__content{
@@ -56,9 +57,8 @@ function tirada(){
     position: absolute;
     left: 3rem;
 	top: 5rem; 
-    font-family:'Gochi Hand', cursive; 
+    font-family:'Gochi Hand', cursive;
+   
     /* 'Shrikhand', cursive;  */
 }
-
-
 </style>

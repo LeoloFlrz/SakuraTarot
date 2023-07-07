@@ -15,7 +15,10 @@ const BooleanShuffle = ref();
 	
 	<main>
 		<BtnReset @response="(reparto) => BooleanShuffle = reparto"/>
-		<h2>Conoce tu destino</h2>
+		<div class="tittle">
+			<h2>CONOCE TU DESTINO</h2>
+		</div>
+		
 		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
 		
 		<CardsDeck :card="1"/>
@@ -33,5 +36,25 @@ body{
 	min-height: 100vh;
 }
 
+.tittle{
+    display: flex;
+    justify-content:center ;
+    margin-top: 2rem;
+}
+
+h2{
+	font-family:'Gochi Hand', cursive;
+	font-size: 5rem;
+	text-align: center;
+	color:#F66AA3;
+	text-shadow: 0.07em 0.07em 0.02em white;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+	h2{
+		font-size: 2rem;
+	};
+}
 
 </style>

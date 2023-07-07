@@ -4,8 +4,22 @@ let emit = defineEmits(['response']);
 let reparto = ref(false);
 
 function tirada(){
-    reparto.value = !reparto.value;
-    emit('response', reparto.value)
+	if (reparto.value === true)
+	{
+		reparto.value = !reparto.value;
+		emit('response', reparto.value)
+		setTimeout(() => 
+		{
+			reparto.value = !reparto.value;
+			console.log(reparto.value);
+			emit('response', reparto.value)
+		}, 1000)
+	}
+	else
+	{
+		reparto.value = !reparto.value;
+		emit('response', reparto.value)
+	}
 }
 </script>
 
@@ -18,7 +32,6 @@ function tirada(){
     
     <div class="g-deck">
         <v-btn class="overcard" variant="plain" @click=tirada()>Nueva <br> tirada</v-btn>
-        <!-- <p>{{reparto}}</p> -->
     </div>
 </template>
 
@@ -41,8 +54,7 @@ function tirada(){
 .g-deck{
     position: absolute;
     left: 3rem;
-	top: 5rem;
-    
+	top: 5rem; 
 }
 
 

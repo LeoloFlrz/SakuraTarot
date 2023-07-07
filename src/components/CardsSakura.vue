@@ -66,7 +66,7 @@
 
 <style scoped>
 .containerCard{
-    max-width: 18vmax;
+    max-width: 65vmax;
     cursor: url(../public/imgs/magicWand_Sakura.png), auto;
 };
 

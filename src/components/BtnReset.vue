@@ -47,6 +47,9 @@ function tirada(){
     margin-top: 2rem;
     z-index: 55; 
 };
+.overcard:click{
+    cursor: url(../../public/imgs/magicWand_Sakura.png), auto;
+};
 
 .v-btn__content{
     color:white;

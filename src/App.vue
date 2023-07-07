@@ -24,7 +24,9 @@ const BooleanShuffle = ref();
 </template>
 
 <style>
-body{	background-image:url('imgs/bg_light.jpeg');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
+body{	
+	background-image:url('imgs/bg_light.jpeg');
 	background-size: cover;
 	min-height: 100vh;
 } 

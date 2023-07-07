@@ -9,6 +9,7 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 
 footer{
     position: sticky;

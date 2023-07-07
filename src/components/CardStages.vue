@@ -70,6 +70,7 @@ onBeforeUpdate(() => {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 .containerEtapa {
   display: flex;
   justify-content: center;

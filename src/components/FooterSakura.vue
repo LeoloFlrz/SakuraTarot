@@ -3,7 +3,6 @@
     <footer>  
         <div class="bg-footer">
             <p>&copy; Sakura CardCaptor  {{ currentYear }}</p>
-        <!-- <img src="imgs/Site-logo_sakura.webp" /> -->
         </div>
     </footer>
 </template>
@@ -12,6 +11,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 
 footer{
+    background-color: rgba(255, 255, 255, 0.5);
+    color:#F66AA3;
     width: 100%;
     display:flex;
     flex-direction: row;
@@ -23,7 +24,7 @@ footer{
     bottom: 0;
     font-family: 'Shrikhand', cursive;
     margin-top: 120vh;
-}
+    }
 
 </style>
 

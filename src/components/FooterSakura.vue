@@ -1,7 +1,8 @@
 
 <template>
     <footer>  
-        <div class="bg-footer">Sakura CardCaptor  {{ currentYear }}
+        <div class="bg-footer">
+            <p>&copy; Sakura CardCaptor  {{ currentYear }}</p>
         <!-- <img src="imgs/Site-logo_sakura.webp" /> -->
         </div>
     </footer>
@@ -12,6 +13,7 @@
 footer{
     position: sticky;
     background-image:url(imgs/bg_sakuras.png);
+    width: 100%;
 }
 
 </style>

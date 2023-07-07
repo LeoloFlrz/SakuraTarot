@@ -1,13 +1,18 @@
 
 <template>
-    <footer>  Sakura CardCaptor  {{ currentYear }}
-        <img src="imgs/Site-logo_sakura.webp" />
+    <footer>  
+        <div class="bg-footer">Sakura CardCaptor  {{ currentYear }}
+        <!-- <img src="imgs/Site-logo_sakura.webp" /> -->
+        </div>
     </footer>
 </template>
 
 <style>
 
-footer{position: sticky;}
+footer{
+    position: sticky;
+    background-image:url(imgs/bg_sakuras.png);
+}
 
 </style>
 

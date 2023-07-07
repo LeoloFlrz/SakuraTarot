@@ -56,6 +56,8 @@ function tirada(){
     position: absolute;
     left: 3rem;
 	top: 5rem; 
+    font-family:'Gochi Hand', cursive; 
+    /* 'Shrikhand', cursive;  */
 }
 
 

@@ -71,6 +71,9 @@ onBeforeUpdate(() => {
 <style scoped>
 .containerEtapa {
   font-family: 'Shrikhand', cursive;
+  font: 1em,;
+  font-weight: lighter;
+  letter-spacing: 2px;
   display: flex;
   justify-content: center;
   /* flex-direction: column; */

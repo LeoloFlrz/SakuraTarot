@@ -25,6 +25,7 @@ const BooleanShuffle = ref();
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 body{	
 	background-image:url('imgs/bg_light.jpeg');
 	background-size: cover;

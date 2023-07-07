@@ -70,10 +70,7 @@ onBeforeUpdate(() => {
 
 <style scoped>
 .containerEtapa {
-  font-family: 'Shrikhand', cursive;
   font: 1em,;
-  font-weight: lighter;
-  letter-spacing: 2px;
   display: flex;
   justify-content: center;
   /* flex-direction: column; */
@@ -85,6 +82,7 @@ onBeforeUpdate(() => {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  /* margin-bottom: 100px; */
 }
 
 .containerPasado, .containerPresente, .containerFuturo {
@@ -99,34 +97,32 @@ onBeforeUpdate(() => {
 .cardImg {
 	width: 30%;
 }
-p{
-  font-family: 'Gochi Hand', cursive;
-  /* margin-bottom: 500px; */
-}
-
 
 .containerPasado p, .containerPresente p, .containerFuturo p {
-  background-image: url(imgs/bg_white.jpeg);
-  background-size: repeat;
+  background-image: url(imgs/whiteWood.jpeg);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-size: cover;
   color: #F66AA3;
-  font-weight: bolder;
   border-radius: 20px;
   padding: 5px 5px;
-  margin: 5px;
+  margin: 10px;
   width: 90%;
 }
 
 .containerPasado h2, .containerPresente h2, .containerFuturo h2 {
-  background-image: url(imgs/bg_sakuras.png);
+  background-image: url(imgs/whiteWood.jpeg);
   background-size: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   color: #F66AA3;
   border-radius: 20px;
-  padding: 10px 25px;
-  margin: 5px;
+  padding: 8px 20px;
+  margin: 10px;
 }
+
 
 
 p, h2 {
   text-align: center;
-}
+  font-family: 'Gochi Hand', cursive;
+  }
 </style>

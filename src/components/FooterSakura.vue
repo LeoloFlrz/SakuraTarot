@@ -12,8 +12,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 
 footer{
-    background-image:url(imgs/sakuraBg.jpeg);
-    background-size:repeat;
     width: 100%;
     display:flex;
     flex-direction: row;
@@ -24,8 +22,7 @@ footer{
     position: fixed;
     bottom: 0;
     font-family: 'Shrikhand', cursive;
-    /* 'Gochi Hand', cursive; */
-    margin-top: 50vh;
+    margin-top: 120vh;
 }
 
 </style>

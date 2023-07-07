@@ -5,84 +5,66 @@ opcion de seleccionar ninguna mas mostrar las 3 cartas asignadas a su etapa
 mostrar significado de cada carta */
 
 <script setup>
-import { ref } from "vue";
-import data from "./CardsSakura.vue";
-// import cards from './CardsSakura.vue'
-import cardsData from "./CardsSakura.vue";
-import count from "./CardsSakura.vue";
+import { onBeforeUpdate, ref } from "vue";
 
-defineProps({
-  contador: {
-    type: String,
-  },
+const props = defineProps({
+  data: {
+    type: Object
+  }
+  
 });
 
-const etapa = ref("");
-const contadorEtapas = ref(0);
-// const cartaSeleccionada = ref('');
-const pasadoFlag = ref(false);
-const presenteFlag = ref(false);
-const futuroFlag = ref(false);
+let card1, card1Meaning;
+let card2, card2Meaning;
+let card3, card3Meaning;
+const arraySeleccionadas = []
+const card1Src = ref()
+const card2Src = ref()
+const card3Src = ref()
 
-const cambiarEtapa = () => {
-  if (contadorEtapas.value === 0) {
-    etapa.value = "pasado";
-    pasadoFlag.value = true;
-  } else if (contadorEtapas.value === 1) {
-    etapa.value = "presente";
-    pasadoFlag.value = false;
-    presenteFlag.value = true;
-  } else if (contadorEtapas.value === 2) {
-    etapa.value = "futuro";
-    presenteFlag.value = false;
-    futuroFlag.value = true;
-  } else {
-    etapa.value = "pasado";
-    contadorEtapas.value = 0;
-    presenteFlag.value = false;
-    futuroFlag.value = false;
-    pasadoFlag.value = true;
-  }
-};
+onBeforeUpdate(() => {
+  arraySeleccionadas.push(props.data);
+    
+    if (arraySeleccionadas.length === 1) {
+      card1 = arraySeleccionadas[0]
+      card1Src.value = card1.img
+      card1Meaning = arraySeleccionadas[0].meaning
+    }
+     if (arraySeleccionadas.length === 2 ) {
+      card2 = arraySeleccionadas[1]
+      card2Src.value = card2.img
+      card2Meaning = arraySeleccionadas[1].meaning
+    } 
+     if (arraySeleccionadas.length === 3 ) {
+      card3 = arraySeleccionadas[2]
+      card3Src.value = card3.img
+      card3Meaning = arraySeleccionadas[2].meaning
+    }
+    return  card1, card1Src, card1Meaning, card2, card2Src, card2Meaning, card3, card3Src, card3Meaning
+})
 
-// const cambiarEtapa = (carta) => {
-//     if (contadorEtapas.value === 0) {
-//     etapa.value = 'pasado';
-//     } else if (contadorEtapas.value === 1) {
-//     etapa.value = 'presente';
-//     } else if (contadorEtapas.value === 2) {
-//     etapa.value = 'futuro';
-//     }
-//     contadorEtapas.value = (contadorEtapas.value + 1) % 3;
-//     cartaSeleccionada.value = carta;
-// };
-//   try {
-//     if (cards[0] != '' && cards[1] != '') {
-//     console.log(cards[0].value || cards[1].value);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
+
 </script>
 
 <template>
   <div class="containerEtapa">
     <h2>Conoce tu destino</h2>
-    <v-btn
-      @click="
-        cambiarEtapa(),
-          contadorEtapas++,
-          console.log(data.value),
-          console.log(cardsData.value),
-          console.log(count.value)
-      "
-    >
-      {{ contadorEtapas }}
-    </v-btn>
     <div class="containerSeleccionadas">
-      <div class="containerPasado">Pasado</div>
-      <div class="containerPresente">Presente</div>
-      <div class="containerFuturo">Futuro</div>
+      <div class="containerPasado">
+        <p>Pasado</p> 
+        <img :v-if="card1Src" :src="card1Src">
+        <p>{{ card1Meaning }}</p>
+      </div>
+      <div class="containerPresente">
+        <p>Presente</p> 
+        <img :v-if="card2Src" :src="card2Src">
+        <p>{{ card2Meaning }}</p>
+      </div>
+      <div class="containerFuturo">
+        <p>Futuro</p>
+        <img :v-if="card3Src" :src="card3Src">  
+        <p>{{ card3Meaning }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -100,5 +82,9 @@ const cambiarEtapa = () => {
   justify-content: center;
   padding-top: auto;
   gap: 1rem;
+}
+
+p {
+  text-align: center;
 }
 </style>

@@ -32,8 +32,8 @@
                     meaning: meaningCard,
                 };
                 cards.value.push(card);
-            };
-        };
+            }
+        }
     });
 
     function showCard(id) {
@@ -46,8 +46,8 @@
             count.value++;
             overlay.value = true;
             threeCards.push(id);
-        };
-    };
+        }
+    }
 </script>
 
 <template>

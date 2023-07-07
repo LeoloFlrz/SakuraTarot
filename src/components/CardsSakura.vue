@@ -68,19 +68,19 @@
 /*scrim="#f9a245"*/
 .containerCard{
     max-width: 18vmax;
-    cursor: url('/imgs/magicWand_Sakura.png'), pointer;
-}
+    cursor: url(../public/imgs/magicWand_Sakura.png), auto;
+};
 
 @media screen and (max-width: 480px) {
 .containerCard {
     max-width: 220px;
     margin: 20px auto;
     padding: 0;
-    cursor: url('/imgs/magicWand_Sakura.png'), pointer;
+    cursor: url(../../public/imgs/magicWand_Sakura.png), auto;
   }
 .imageCard {
     padding: 0;
-}
-}
+};
+};
 
 </style>

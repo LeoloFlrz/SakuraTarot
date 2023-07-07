@@ -55,6 +55,6 @@ h2{
 	h2{
 		font-size: 2rem;
 	};
-}
+};
 
 </style>

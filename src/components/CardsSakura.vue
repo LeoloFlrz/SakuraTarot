@@ -19,7 +19,7 @@
 
     onBeforeMount(async () => {
         cardsData.value = await apiCall.getData();
-        while (randoms.length < 9) {
+        while (randoms.length < 12) {
             const random = Math.floor(Math.random() * 55);
             const exist = randoms.filter((r) => r === random);
             let imgCard = cardsData.value.data[random].sakuraCard;
@@ -51,34 +51,29 @@
 </script>
 
 <template>
-		<v-container class="align-center justify-center containerCard">
+		<v-container class="align-center justify-center containerCard my-6">
 			<v-row>
-				<v-col cols="4" v-for="n in 9" :key="n">
-					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" elevation="12" class="imageCard mx-auto rounded-lg pa-2"></v-img>
+				<v-col cols="4" sm="4" md="2" lg="2" v-for="n in 12" :key="n">
+					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" class="imageCard mx-auto rounded-lg pa-2"></v-img>
 				</v-col>
 			</v-row>
 		</v-container>
-		<v-overlay v-model="overlay" class="align-center justify-center" scrim="#795176" @click:outside="overlay = false" >
+		<v-overlay v-model="overlay" class="align-center justify-center" scrim="#795176" @click:outside="overlay = false">
 			<v-img :src="clickCard" class="rounded-lg"></v-img>
 		</v-overlay>
 </template>
 
 
 <style scoped>
-/*scrim="#f9a245"*/
 .containerCard{
-    max-width: 18vmax;
+    width: 65vmax;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 960px) {
 .containerCard {
-    max-width: 220px;
-    margin: 20px auto;
+    width: 33vmax;
     padding: 0;
   }
-.imageCard {
-    padding: 0;
-}
 }
 
 </style>

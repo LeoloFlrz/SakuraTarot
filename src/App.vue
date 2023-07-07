@@ -28,7 +28,7 @@ const BooleanShuffle = ref();
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 body{	
 	background-image:url('imgs/bg_light.jpeg');
-	background-size: cover;
+	background-size: fit;
 	min-height: 100vh;
 } 
 </style>

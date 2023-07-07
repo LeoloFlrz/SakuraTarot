@@ -21,25 +21,32 @@ const arraySeleccionadas = []
 const card1Src = ref('');
 const card2Src = ref('');
 const card3Src = ref('');
+let test;
 
 onBeforeUpdate(() => {
-  arraySeleccionadas.push(props.data);
-    
-    if (arraySeleccionadas.length === 1) {
-      card1 = arraySeleccionadas[0]
-      card1Src.value = card1.img
-      card1Meaning = arraySeleccionadas[0].meaning
+	if (test != props.data)
+	{
+		arraySeleccionadas.push(props.data);
+	setTimeout(() => {
+    if (arraySeleccionadas.length === 1) 
+	{
+		card1 = arraySeleccionadas[0]
+		card1Src.value = card1.img
+		card1Meaning = arraySeleccionadas[0].meaning
     }
      if (arraySeleccionadas.length === 2 ) {
-      card2 = arraySeleccionadas[1]
-      card2Src.value = card2.img
-      card2Meaning = arraySeleccionadas[1].meaning
+		card2 = arraySeleccionadas[1]
+		card2Src.value = card2.img
+		card2Meaning = arraySeleccionadas[1].meaning
     } 
      if (arraySeleccionadas.length === 3 ) {
       card3 = arraySeleccionadas[2]
       card3Src.value = card3.img
       card3Meaning = arraySeleccionadas[2].meaning
     }
+	}, 2100)
+	}
+	test = props.data;
     //return  card1, card1Src, card1Meaning, card2, card2Src, card2Meaning, card3, card3Src, card3Meaning
 })
 

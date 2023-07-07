@@ -32,8 +32,8 @@
                     meaning: meaningCard,
                 };
                 cards.value.push(card);
-            };
-        };
+            }
+        }
     });
 
     function showCard(id) {
@@ -46,8 +46,8 @@
             count.value++;
             overlay.value = true;
             threeCards.push(id);
-        };
-    };
+        }
+    }
 </script>
 
 <template>
@@ -67,7 +67,7 @@
 <style scoped>
 /*scrim="#f9a245"*/
 .containerCard{
-    max-width: 300px;
+    max-width: 27vmax;
 }
 
 </style>

@@ -1,46 +1,49 @@
+<script setup>
+import {ref} from 'vue';
+let emit = defineEmits(['response']);
+let reparto = ref(false);
+
+function tirada(){
+    reparto.value = !reparto.value;
+    emit('response', reparto.value)
+}
+</script>
+
 <template>
+   
+    
     <div class="logo">
-        <v-img height="80" src="/imgs/Site-logo_sakura.webp" />
+        <v-img height="13vmin" src="/imgs/Site-logo_sakura.webp" />
     </div>
-    <div>
-        <v-btn class="overcard" variant="plain" >Nueva tirada</v-btn>
+    
+    <div class="g-deck">
+        <v-btn class="overcard" variant="plain" @click=tirada()>Nueva <br> tirada</v-btn>
+        <!-- <p>{{reparto}}</p> -->
     </div>
 </template>
 
-<script>
-// import GetData from './src/services/ApiService.js';
+<style>
+.logo{
+    display: flex;
+    justify-content:center ;
+    margin-top: 2rem;
+}
+.overcard{
+    margin-top: 2rem;
+    z-index: 55; 
+    background-color: rgba(255, 0, 0, 0.5);
+    }
 
-// const APIUrl = 'https://6388b6e5a4bb27a7f78f96a5.mockapi.io/sakura-cards/';
-// const getDataInstance = new GetData();
+.v-btn__content{
+    color:white;
+    font-weight: bolder;
+}
+.g-deck{
+    position: absolute;
+    left: 3rem;
+	top: 5rem;
+    
+}
 
-// export default {
-//   methods: {
-//     async selectCards() {
-//       try {
-//         const response = await getDataInstance.getData();
-//         const cards = response.data;
 
-//         const selectedCards = getRandomCards(cards, 9);
-//         console.log(selectedCards); 
-
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     }
-//   }
-// };
-
-// function getRandomCards(cards, count) {
-//   const shuffledCards = shuffleArray(cards);
-//   return shuffledCards.slice(0, count);
-// }
-
-// function shuffleArray(array) {
-//   const newArray = [...array];
-//   for (let i = newArray.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-//   }
-//   return newArray;
-// }
-</script>
+</style>

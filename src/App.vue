@@ -1,18 +1,29 @@
 <script setup>
 import { ref } from "vue";
 import CardsSakura from './components/CardsSakura.vue';
-import CardsDeck from './components/CardsDeck.vue';
 import BtnReset from './components/BtnReset.vue';
-
+import CardsDeck from './components/CardsDeck.vue';
+import CardStages from './components/CardStages.vue'
 const objectFromChild = ref();
+const BooleanShuffle = ref();
+
 </script>
 
 <template>
-	<CardsDeck></CardsDeck>
+	
 	<main>
-		<BtnReset />
-		<CardsSakura @response="(data) => objectFromChild = data" />
+		<BtnReset @response="(reparto) => BooleanShuffle = reparto"/>
+		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
+		<CardsDeck :card="1"/>
+		<CardStages :data = "objectFromChild"/>
+
+		
 	</main>
 </template>
 
-<style></style>
+<style>
+body{	background-image:url('imgs/bg_light.jpeg');
+	background-size: cover;
+	min-height: 100vh;
+} 
+</style>

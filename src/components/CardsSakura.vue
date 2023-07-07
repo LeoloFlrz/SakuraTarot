@@ -19,7 +19,7 @@
 
     onBeforeMount(async () => {
         cardsData.value = await apiCall.getData();
-        while (randoms.length < 9) {
+        while (randoms.length < 12) {
             const random = Math.floor(Math.random() * 55);
             const exist = randoms.filter((r) => r === random);
             let imgCard = cardsData.value.data[random].sakuraCard;
@@ -53,7 +53,7 @@
 <template>
 		<v-container class="align-center justify-center containerCard">
 			<v-row>
-				<v-col cols="4" v-for="n in 9" :key="n">
+				<v-col cols="4" sm="4" md="4" lg="2" v-for="n in 12" :key="n">
 					<v-img src="/imgs/sakuraReverse.jpg" @click="showCard(n-1)" elevation="12" class="imageCard mx-auto rounded-lg pa-2"></v-img>
 				</v-col>
 			</v-row>
@@ -67,12 +67,12 @@
 <style scoped>
 /*scrim="#f9a245"*/
 .containerCard{
-    max-width: 18vmax;
+    max-width: 50vmax;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 860px) {
 .containerCard {
-    max-width: 220px;
+    max-width: 30vmax;
     margin: 20px auto;
     padding: 0;
   }

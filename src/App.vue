@@ -18,8 +18,7 @@ const BooleanShuffle = ref();
 		<CardsSakura v-if ="BooleanShuffle" @response="(data) => objectFromChild = data" />
 		<CardStages />
 		<CardsDeck :card="1"/>
-		<FooterSakura />
-
+		<!-- <FooterSakura /> -->
 		
 	</main>
 </template>

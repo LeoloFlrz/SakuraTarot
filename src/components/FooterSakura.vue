@@ -2,7 +2,8 @@
 <template>
       <!-- <img src="imgs/Site-logo_sakura.webp" />
        
-      <v-footer> {{ currentYear }} Sakura CardCaptor </v-footer> -->
+      <v-footer>  Sakura CardCaptor </v-footer> -->
+      <!-- {{ currentYear }} -->
   </template>
 
 <style>

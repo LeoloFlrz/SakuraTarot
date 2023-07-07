@@ -49,19 +49,19 @@ onBeforeUpdate(() => {
 <template>
   <div class="containerEtapa">
     <div class="containerSeleccionadas">
-      <div class="containerPasado">
-        <p>Pasado</p> 
-        <img :v-if="card1Src" :src="card1Src">
+      <div :v-if="card1Src" class="containerPasado">
+        <h2>Pasado</h2> 
+        <img :src="card1Src">
         <p>{{ card1Meaning }}</p>
       </div>
-      <div class="containerPresente">
-        <p>Presente</p> 
-        <img :v-if="card2Src" :src="card2Src">
+      <div :v-if="card2Src" class="containerPresente">
+        <h2>Presente</h2> 
+        <img :src="card2Src">
         <p>{{ card2Meaning }}</p>
       </div>
-      <div class="containerFuturo">
-        <p>Futuro</p>
-        <img :v-if="card3Src" :src="card3Src">  
+      <div :v-if="card3Src" class="containerFuturo">
+        <h2>Futuro</h2>
+        <img :src="card3Src">  
         <p>{{ card3Meaning }}</p>
       </div>
     </div>
@@ -69,6 +69,7 @@ onBeforeUpdate(() => {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 .containerEtapa {
   display: flex;
   justify-content: center;
@@ -78,12 +79,44 @@ onBeforeUpdate(() => {
 
 .containerSeleccionadas {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: auto;
   gap: 1rem;
 }
 
-p {
+.containerPasado, .containerPresente, .containerFuturo {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 20vw;
+  height: auto;
+}
+
+
+
+.containerPasado , .containerPresente , .containerFuturo  {
+  width: 8vw;
+  height: auto;
+}
+
+.containerPasado p, .containerPresente p, .containerFuturo p {
+  background: #bb5c5c;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 5px;
+  margin: 5px;
+}
+
+.containerPasado h2, .containerPresente h2, .containerFuturo h2 {
+  background: #bb5c5c;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 5px;
+  margin: 5px;
+}
+
+
+p, h2 {
   text-align: center;
 }
 </style>

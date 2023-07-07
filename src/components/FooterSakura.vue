@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 
 footer{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     color:#F66AA3;
     width: 100%;
     display:flex;

@@ -21,25 +21,32 @@ const arraySeleccionadas = []
 const card1Src = ref('');
 const card2Src = ref('');
 const card3Src = ref('');
+let test;
 
 onBeforeUpdate(() => {
-  arraySeleccionadas.push(props.data);
-    
-    if (arraySeleccionadas.length === 1) {
-      card1 = arraySeleccionadas[0]
-      card1Src.value = card1.img
-      card1Meaning = arraySeleccionadas[0].meaning
+	if (test != props.data)
+	{
+		arraySeleccionadas.push(props.data);
+	setTimeout(() => {
+    if (arraySeleccionadas.length === 1) 
+	{
+		card1 = arraySeleccionadas[0]
+		card1Src.value = card1.img
+		card1Meaning = arraySeleccionadas[0].meaning
     }
      if (arraySeleccionadas.length === 2 ) {
-      card2 = arraySeleccionadas[1]
-      card2Src.value = card2.img
-      card2Meaning = arraySeleccionadas[1].meaning
+		card2 = arraySeleccionadas[1]
+		card2Src.value = card2.img
+		card2Meaning = arraySeleccionadas[1].meaning
     } 
      if (arraySeleccionadas.length === 3 ) {
       card3 = arraySeleccionadas[2]
       card3Src.value = card3.img
       card3Meaning = arraySeleccionadas[2].meaning
     }
+	}, 2100)
+	}
+	test = props.data;
     //return  card1, card1Src, card1Meaning, card2, card2Src, card2Meaning, card3, card3Src, card3Meaning
 })
 
@@ -71,10 +78,14 @@ onBeforeUpdate(() => {
 <style scoped>
 .containerEtapa {
   font-family: 'Shrikhand', cursive;
+  font: 1em,;
+  font-weight: lighter;
+  letter-spacing: 2px;
   display: flex;
   justify-content: center;
   /* flex-direction: column; */
   /* align-items: center; */
+  margin-bottom: 120px;
 }
 
 .containerSeleccionadas {
@@ -97,12 +108,15 @@ onBeforeUpdate(() => {
 }
 p{
   font-family: 'Gochi Hand', cursive;
+  /* margin-bottom: 500px; */
 }
 
 
 .containerPasado p, .containerPresente p, .containerFuturo p {
-  background: #bb5c5c;
-  color: #fff;
+  background-image: url(imgs/bg_white.jpeg);
+  background-size: repeat;
+  color: #F66AA3;
+  font-weight: bolder;
   border-radius: 20px;
   padding: 5px 5px;
   margin: 5px;
@@ -110,10 +124,11 @@ p{
 }
 
 .containerPasado h2, .containerPresente h2, .containerFuturo h2 {
-  background: #bb5c5c;
-  color: #fff;
+  background-image: url(imgs/bg_sakuras.png);
+  background-size: cover;
+  color: #F66AA3;
   border-radius: 20px;
-  padding: 5px 5px;
+  padding: 10px 25px;
   margin: 5px;
 }
 

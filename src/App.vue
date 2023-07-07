@@ -27,7 +27,7 @@ const BooleanShuffle = ref();
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
 body{	
 	background-image:url('imgs/bg_light.jpeg');
-	background-size: cover;
+	background-size: fit;
 	min-height: 100vh;
 } 
 </style>

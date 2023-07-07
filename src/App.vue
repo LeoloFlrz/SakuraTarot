@@ -28,8 +28,5 @@ body{	background-image:url('imgs/bg_light.jpeg');
 	min-height: 100vh;
 }
 
-h2{
-
-}
 
 </style>

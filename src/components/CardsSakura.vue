@@ -70,15 +70,12 @@
     max-width: 50vmax;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 420px) {
 .containerCard {
     max-width: 30vmax;
     margin: 20px auto;
     padding: 0;
   }
-.imageCard {
-    padding: 0;
-}
 }
 
 </style>

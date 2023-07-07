@@ -70,6 +70,7 @@ onBeforeUpdate(() => {
 
 <style scoped>
 .containerEtapa {
+  font-family: 'Shrikhand', cursive;
   display: flex;
   justify-content: center;
   /* flex-direction: column; */
@@ -94,7 +95,9 @@ onBeforeUpdate(() => {
 .cardImg {
 	width: 30%;
 }
-
+p{
+  font-family: 'Gochi Hand', cursive;
+}
 
 
 .containerPasado p, .containerPresente p, .containerFuturo p {

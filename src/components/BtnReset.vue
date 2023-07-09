@@ -37,25 +37,28 @@ function tirada(){
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Shrikhand&display=swap');
+
 .logo{
     display: flex;
     justify-content:center ;
     margin-top: 2rem;
 }
+
 .overcard{
-    cursor: url(../../public/imgs/magicWand_Sakura.png), auto;
     margin-top: 2rem;
     z-index: 55; 
-};
-.overcard:click{
-    cursor: url(../../public/imgs/magicWand_Sakura.png), auto;
-};
+}
 
-.v-btn__content{
+.overcard:hover {
+    cursor: url(../../imgs/magicWand_Sakura.png), auto;
+}
+
+.v-btn__content {
     color:white;
     font-weight: bolder;
 }
-.g-deck{
+
+.g-deck {
     position: absolute;
     left: 3rem;
 	top: 5rem; 

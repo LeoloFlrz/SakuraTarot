@@ -1,9 +1,3 @@
-/** me llega la carta seleccionada? asignar carta seleccionada a etapa
-correspondiente cuando se selecciona la carta para una etapa pasar a la
-siguiente etapa cuando las 3 etapas tienen una carta seleccionada no tener la
-opcion de seleccionar ninguna mas mostrar las 3 cartas asignadas a su etapa
-mostrar significado de cada carta */
-
 <script setup>
 import { onBeforeUpdate, ref } from "vue";
 
